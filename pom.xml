@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.test</groupId>
-    <artifactId>spring-boot-01-helloworld</artifactId>
+    <artifactId>springbootMybatisPlus</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <!--管理Spring boot应用里面的所有依赖版本，版本仲裁中心，以后导入不需要写版本-->
