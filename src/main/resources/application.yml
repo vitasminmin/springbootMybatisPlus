@@ -8,5 +8,6 @@ spring:
     url: jdbc:oracle:thin:@120.52.78.23:1526:kbp
     password: kbpdata
     driver-class-name: oracle.jdbc.OracleDriver
-
-
+logging:
+  level:
+    root: info
