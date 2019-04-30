@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/vue.js"></script>
+    <script src="js/axios.min.js"></script>
+    <script src="js/element_index.js"></script>
+    <link href="css/element_index.css" rel="stylesheet">
+</head>
+<body>
+<div id="app">
+    <div>
+        <div>
+            <table>
+                <thead class="">
+                <th>登录账户</th>
+                <th>用户名称</th>
+                <th>状态</th>
+                <th>操作</th>
+                </thead>
+                <tr v-for="item in dataList">
+                    <td>{{item.userId}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.status}}</td>
+                    <td>
+                        <a href="javascript:void(0)" @click="del(item.id)">删除</a>
+                        <a href="javascript:void(0)" @click="showDetail()">详情</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <el-row>
+        <el-button>默认按钮</el-button>
+        <el-button type="primary">主要按钮</el-button>
+        <el-button type="success">成功按钮</el-button>
+        <el-button type="info">信息按钮</el-button>
+        <el-button type="warning">警告按钮</el-button>
+        <el-button type="danger">危险按钮</el-button>
+    </el-row>
+
+    <el-button  @click="dialogVisible = true">增加</el-button>
+
+    <el-dialog
+            title="新增用户"
+            :visible.sync="dialogVisible"
+            width="30%"
+            :before-close="handleClose">
+        <el-form ref="initObj" :model="initObj" label-width="80px">
+            <el-form-item label="用户ID:">
+                <el-input v-model="initObj.userId" placeholder="输入用户ID"></el-input>
+            </el-form-item>
+            <el-form-item label="用户名:">
+                <el-input v-model="initObj.name" placeholder="输入用户名"></el-input>
+            </el-form-item>
+            <el-form-item label="状态:">
+                <el-input v-model="initObj.status" placeholder="输入状态0/1"></el-input>
+            </el-form-item>
+        </el-form>
+        <span slot="footer" class="dialog-footer">
+            <el-button @click="dialogVisible = false">取 消</el-button>
+            <el-button type="primary" @click="add()">确 定</el-button>
+        </span>
+    </el-dialog>
+</div>
+<script src="index.js"></script>
+</body>
+</html>

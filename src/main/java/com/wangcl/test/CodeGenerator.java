@@ -113,6 +113,7 @@ public class CodeGenerator {
         strategy.setSuperEntityColumns("id");
         strategy.setControllerMappingHyphenStyle(true);
         strategy.setTablePrefix(pc.getModuleName() + "_");
+        strategy.setSuperControllerClass("");
         mpg.setStrategy(strategy);
         mpg.setTemplateEngine(new FreemarkerTemplateEngine());
         mpg.execute();
